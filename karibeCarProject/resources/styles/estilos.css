@@ -120,8 +120,101 @@ header{
   }
   
 
+  .titulo-sucursal {
+    color: #245;
+    font-size: 25px;
+    text-align: center;
+
+  }
+  .subtitulo-sucursal{
+    color: #c46820;
+    font-size: 17px;
+
+  }
+
+.logo-horario{
+  color: #e67300;
+  margin-right: 10px;
+}
+.logo-telefono{
+  color: #e67300;
+  margin-right: 10px;
+
+}
+.logo-direccion{
+  color:#e67300 ;
+  margin-right: 10px;
+}
+.car-fondo{
+  background-color: white;
+  border-radius: 10px;
  
-  
+}
+.texto-alerta{
+background-color: #245;
+color: white;
+font-size: 18px;
+}
+.texto-oficina{
+  margin-bottom: 70px;
+  margin-top: 25px;
+}
+.fondo-general{
+  background-color: #f4f3f3;
+  display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; width: 100%; padding: 2rem 5rem 2rem 1rem;
+
+}
+/*car-iconos vehiculo*/
+
+.detalles-link {
+  margin-top: 15px; /* Agrega espacio arriba del enlace */
+  display: inline-block; /* Hace que el enlace se comporte como un bloque */
+  color: #0f3973;
+}
+.titulo-vehiculo{
+  color: #0f3973;
+  font-size: 23px;
+}
+.subtitulo-vehiculo{
+  font-size: 18px;
+}
+.card-body{
+margin-left: 12px;
+
+}
+.btn-detalle-vehiculo{
+  background-color: #e67300;
+  color: white;
+  border: none;
+  padding: 9px 19px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-detalle-vehiculo:hover {
+  background-color: #cc5c00;
+}
+.icono-vehiculo{
+  font-size: 20px;              
+  color: #0f3973;                
+}
+.color-strong {
+  color:rgba(0, 0, 0, 0.81);
+  font-size: 17px;
+}
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .modal-pequeno {
+    max-width: 400px;
+  }
+
+
+
   /* Estilo base para las tarjetas */
 .card {
   width: 350px;
@@ -174,7 +267,7 @@ header{
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(169, 168, 168, 0.2); 
+  box-shadow: 0 4px 12px rgba(203, 201, 201, 0.2); 
   
 }
 /* Efecto al pasar el mouse sobre la imagen */
@@ -241,19 +334,19 @@ header{
   
   .icons i {
     font-size: 15px;              
-    color: #3b3b3b;               
+    color: white;               
     padding: 6px;
     border-radius: 20%;           
-    background-color: #f0f8ff;    
-    border: 2px solid rgb(106, 99, 99);      
+    background-color: #245;    
+    border: 2px solid #0f3973;      
     transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
   }
   
   /* Hover */
   .icons i:hover {
     transform: scale(1.2);          
-    color: white;                   
-    background-color: #245;         
+    color: #245;                   
+    background-color: white;         
     border-color: rgb(16, 64, 88);  
   }
   
@@ -298,7 +391,7 @@ header{
 
   /* Fondo blanco semi-transparente para mejorar la visibilidad del formulario */
   .form {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.855);
     border-radius: 10px;
 
   }
@@ -321,11 +414,12 @@ header{
     background-color: #e67300;
   }
 
+
   .fondo-container {
-    background-image: url('../images/playa.jpg'); 
+    background-image: url('../images/ImgNosotros.jpg'); 
     background-size: cover;
     background-position: center;
-    height: 280px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -353,7 +447,7 @@ header{
 
 
   .formulario-blanco {
-    background-color: rgba(255, 255, 255, 0.315);  
+    background-color: rgba(255, 255, 255, 0.26);  
     backdrop-filter: blur(12px);              
     -webkit-backdrop-filter: blur(12px);         
     border-radius: 15px;
@@ -480,3 +574,4 @@ header{
     border-radius: 1rem;
   }
 }
+
