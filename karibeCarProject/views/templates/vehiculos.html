@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vehículos</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+   
+    <link href="../../resources/styles/estilos.css" rel="stylesheet">
+  </head>
+  <body >
+    <div id="header-include"></div>
+    <!-- CONTENIDO PRINCIPAL -->
+
+  <!-- CONTENEDOR GENERAL -->
+<div class="container-fluid">
+    <div class="row">
+  
+      <!-- FILTRO LATERAL -->
+      <div class="col-lg-2 col-md-3 col-sm-12 mb-4">
+        <div class="p-4 rounded shadow-sm text-white filtro-pequeno" style="background-color: #245; margin-top: 10px; margin-left: 10px;">
+  
+          <h6 class="fw-bold mb-3">FILTROS</h6>
+  
+          <!-- Checkboxes -->
+          <div class="form-check mb-2">
+            <input class="form-check-input  border-white" type="checkbox" value="sedan" id="checkSedan" checked>
+            <label class="form-check-label text-white" for="checkSedan">Sedán</label>
+          </div>
+  
+          <div class="form-check mb-2">
+            <input class="form-check-input border-white" type="checkbox" value="suv" id="checkSUV">
+            <label class="form-check-label text-white" for="checkSUV">SUV</label>
+          </div>
+  
+          <div class="form-check mb-2">
+            <input class="form-check-input border-white" type="checkbox" value="pickup" id="checkPickup">
+            <label class="form-check-label text-white" for="checkPickup">Pickup</label>
+          </div>
+  
+          <div class="form-check mb-2">
+            <input class="form-check-input border-white" type="checkbox" value="van" id="checkVan">
+            <label class="form-check-label text-white" for="checkVan">Van</label>
+          </div>
+  
+          <div class="form-check mb-4">
+            <input class="form-check-input border-white" type="checkbox" value="electricos" id="checkElectric">
+            <label class="form-check-label text-white" for="checkElectric">Eléctricos</label>
+          </div>
+  
+          <!-- Select de cantidad -->
+          <label for="cantidadPasajeros" class="form-label text-white">Pasajeros</label>
+          <select class="form-select mb-2" id="cantidadPasajeros">
+            <option selected disabled>Cantidad</option>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="7">7+</option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- CONTENIDO AL LADO -->
+      <div class="col-lg-9 col-md-8 col-12">
+        <!-- Aquí podés poner tus cards, resultados, etc. -->
+        <p class="text-muted"> <h4 style="color: #245; margin-top: 10px;">Opciones de vehículos para rentar</h4>
+          <strong>Elige el vehículo que mejor se adapte a tu viaje, con precios accesibles y atención personalizada..</strong></p>
+        
+        <div class="row" id="contenedor-cards"> <!-- Se agregó la clase row aquí -->
+          <!-- CARD 1 -->
+          <div class="col-md-3 col-lg-3 mb-4 card-item Toyota-Agya">
+            <div class="card h-100 card-hover " style="background-color: rgb(247, 245, 245);">
+              <img src="../../resources/images/card-modal-toyota-agya-auto.png" class="card-img-top" alt="Imagen del Toyota Agya">
+              <div class="card-body">
+                <h5 class="card-title titulo-vehiculo fw-bold">Vehículo mini</h5>
+                <p class="card-text subtitulo-vehiculo">Toyota Agya o similar</p>
+                <i class="bi bi-gear icono-vehiculo me-2" title="Automático"></i>Automático<br>
+                <P><strong>Motor:</strong> 1.0L (998 cc) / 1.2L (1,197 cc) <br>
+                  <strong>Pasajeros:</strong> 4 <br>
+                </P>
+                <button class="btn btn-detalle-vehiculo" style="float: right;" data-bs-toggle="modal" data-bs-target="#modalSedan1">
+                  <i class="bi bi-eye me-2"></i> Ver detalles
+                </button>
+              </div>
+            </div>
+          </div>
+      
+          <!-- MODAL 1 -->
+          <div class="modal fade" id="modalSedan1" tabindex="-1" aria-labelledby="modalSedan1Label" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-pequeno">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalSedan1Label">Toyota Agya o similar</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="../../resources/images/card-modal-toyota-agya-auto.png" class="card-img-top" alt="Imagen del Toyota Agya">
+                  <p><strong class="color-strong">Descripción:</strong> El Toyota Agya es un vehículo compacto tipo hatchback, ideal para desplazamientos urbanos y viajes cortos.</p>
+                  <p><strong class="color-strong">Capacidad de pasajeros:</strong> 4</p>
+                  <p><strong class="color-strong">También incluye:</strong> 
+                    <br>
+                    <i class="bi bi-car-front me-1 icono-vehiculo me-2" title="Cuatro puertas"></i>Cuatro puertas<br>
+                    <i class="bi bi-wind me-1 icono-vehiculo me-2" title="Aire acondicionado"></i>Aire Acondicionado<br>
+                    <i class="bi bi-volume-up me-1 icono-vehiculo me-2" title="Radio"></i>Radio estéreo AM/FM<br>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Reservar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+         
+          
+        </div> <!-- Cierre de .row -->
+      </div>
+      
+  
+    
+
+        <!-- FOOTER -->
+        <div id="footer-include"></div>
+
+        <!-- Bootstrap JS + includes -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../scripts/include.js"></script>
+    
+        
+          
+      </body>
+    </html>
+  
