@@ -75,7 +75,7 @@ modal.innerHTML = `
                     <p><i class="bi bi-card-text me-2" title="Placa"></i><strong>Placa:</strong> ${vehiculo.placa}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="../views/reservar.html" class="btn btn-primary">Reservar</a>
                 </div>
             </div>
         </div>
