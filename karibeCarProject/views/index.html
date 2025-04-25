@@ -13,24 +13,31 @@
       crossorigin="anonymous"
     />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
 
-   
-    <link href="../../resources/styles/estilos.css" rel="stylesheet">
+    <link href="../resources/styles/estilos.css" rel="stylesheet" />
   </head>
-  <body >
+  <body>
     <div id="header-include"></div>
     <!-- CONTENIDO PRINCIPAL -->
- 
+
     <div class="fondo-container">
       <div class="container my-4">
         <form class="formulario-blanco">
           <h3 class="mb-4">ALQUILER DE AUTOS</h3>
-  
+
           <!-- Lugar de recogida -->
           <div class="mb-3">
-            
-            <select class="form-control" id="lugar_recogida" name="lugar_recogida" onchange="verificarLugarRecogida()" required>
+            <select
+              class="form-control"
+              id="lugar_recogida"
+              name="lugar_recogida"
+              onchange="verificarLugarRecogida()"
+              required
+            >
               <option value="">Ingrese la oficina de salida</option>
               <option value="san_jose">San José</option>
               <option value="alajuela">Alajuela</option>
@@ -38,171 +45,226 @@
               <option value="liberia">Liberia</option>
             </select>
           </div>
-  
+
           <!-- Botón cancelar -->
           <div class="mb-3 d-flex justify-content-end">
-            <button type="button" class="btn-cancelar">Modificar o Cancelar tu reservación</button>
+            <button type="button" class="btn-cancelar">
+              Modificar o Cancelar tu reservación
+            </button>
           </div>
-  
+
           <!-- Campos adicionales -->
-          <div id="formulario_adicional" style="display: none;">
+          <div id="formulario_adicional" style="display: none">
             <div class="mb-3">
-              <label for="fecha_recogida" class="form-label">Fecha y Hora de Recogida</label>
-              <input type="datetime-local" class="form-control" id="fecha_recogida" name="fecha_recogida" required>
+              <label for="fecha_recogida" class="form-label"
+                >Fecha y Hora de Recogida</label
+              >
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="fecha_recogida"
+                name="fecha_recogida"
+                required
+              />
             </div>
-  
+
             <div class="mb-3">
-              <label for="fecha_devolucion" class="form-label">Fecha y Hora de Devolución</label>
-              <input type="datetime-local" class="form-control" id="fecha_devolucion" name="fecha_devolucion" required>
+              <label for="fecha_devolucion" class="form-label"
+                >Fecha y Hora de Devolución</label
+              >
+              <input
+                type="datetime-local"
+                class="form-control"
+                id="fecha_devolucion"
+                name="fecha_devolucion"
+                required
+              />
             </div>
-  
+
             <div class="mb-3">
               <label for="edad" class="form-label">Edad</label>
-              <input type="number" class="form-control" id="edad" name="edad" required min="18" max="99">
+              <input
+                type="number"
+                class="form-control"
+                id="edad"
+                name="edad"
+                required
+                min="18"
+                max="99"
+              />
             </div>
-  
+
             <div class="text-end">
-              <button type="submit" class="btn btn-primary">Verificar Disponibilidad</button>
+              <button type="submit" class="btn btn-primary">
+                Verificar Disponibilidad
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
-  
+
     <!-- Bloque de flota -->
     <div class="flota-container text-center py-5">
       <h2>Viaje con libertad, elija su vehículo</h2>
       <p>Conduce hacia el paraíso, tu próxima aventura te espera.</p>
-      <div class="flota-buttons d-flex justify-content-center flex-wrap gap-2 mt-3">
-        <button class="flota-btn btn  text-white ">Todos</button>
-        <button class="flota-btn btn text-white ">Sedan</button>
-        <button class="flota-btn btn  text-white">SUV</button>
-        <button class="flota-btn btn btn-warning text-white " style="background-color: #e67300;">Más rentados</button>
+      <div
+        class="flota-buttons d-flex justify-content-center flex-wrap gap-2 mt-3"
+      >
+        <button class="flota-btn btn text-white">Todos</button>
+        <button class="flota-btn btn text-white">Sedan</button>
+        <button class="flota-btn btn text-white">SUV</button>
+        <button
+          class="flota-btn btn btn-warning text-white"
+          style="background-color: #e67300"
+        >
+          Más rentados
+        </button>
       </div>
     </div>
-   <div class="container-color">
-    <div class="container my-5">
-      <div class="row g-4">
-    
-        <!-- Tarjeta 1 -->
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-img-top">
-              <div class="destacado">Destacado</div>
-              <img src="../resources/images/Mitsubishi-L200-800x400.png" class="img-fluid" alt="Mitsubishi L200">
+    <div class="container-color">
+      <div class="container my-5">
+        <div class="row g-4">
+          <!-- Tarjeta 1 -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-img-top">
+                <div class="destacado">Destacado</div>
+                <img
+                  src="../resources/images/Mitsubishi-L200-800x400.png"
+                  class="img-fluid"
+                  alt="Mitsubishi L200"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Mitsubishi L200 Pick Up</h5>
+                <p class="card-text">Doble tracción 4x4</p>
+                <div class="icons">
+                  <i class="bi bi-car-front" title="Volante ajustable"></i>
+                  <i class="bi bi-people-fill" title="5 Pasajeros"></i>
+                  <i class="bi bi-fuel-pump" title="Diesel"></i>
+                  <i class="bi bi-gear" title="Manual"></i>
+                  <i class="bi bi-wind" title="Aire acondicionado"></i>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title">Mitsubishi L200 Pick Up</h5>
-              <p class="card-text">Doble tracción 4x4</p>
-              <div class="icons">
-                <i class="bi bi-car-front" title="Volante ajustable"></i>
-                <i class="bi bi-people-fill" title="5 Pasajeros"></i>
-                <i class="bi bi-fuel-pump" title="Diesel"></i>
-                <i class="bi bi-gear" title="Manual"></i>
-                <i class="bi bi-wind" title="Aire acondicionado"></i>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-img-top">
+                <img
+                  src="../resources/images/Mitsubishi- 4X4 ASX.png"
+                  class="img-fluid"
+                  alt="Mitsubishi ASX"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Mitsubishi 4X4 ASX</h5>
+                <p class="card-text">Doble tracción 4x4</p>
+                <div class="icons">
+                  <i class="bi bi-lightning" title="Eléctrico"></i>
+                  <i class="bi bi-people-fill" title="5 Pasajeros"></i>
+                  <i class="bi bi-fuel-pump" title="Gasolina"></i>
+                  <i class="bi bi-gear" title="Automático"></i>
+                  <i class="bi bi-wind" title="Aire acondicionado"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-img-top">
+                <img
+                  src="../resources/images/Mitsubishi-Outlander.jpg"
+                  class="img-fluid"
+                  alt="Mitsubishi Outlander"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Mitsubishi 4X4 Outlander</h5>
+                <p class="card-text">Doble tracción 4x4</p>
+                <div class="icons">
+                  <i class="bi bi-lightning" title="Eléctrico"></i>
+                  <i class="bi bi-people-fill" title="7 Pasajeros"></i>
+                  <i class="bi bi-fuel-pump" title="Gasolina"></i>
+                  <i class="bi bi-gear" title="Automático"></i>
+                  <i class="bi bi-wind" title="Aire acondicionado"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
-    
-        <!-- Tarjeta 2 -->
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-img-top">
-              <img src="../resources/images/Mitsubishi- 4X4 ASX.png" class="img-fluid" alt="Mitsubishi ASX">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Mitsubishi 4X4 ASX</h5>
-              <p class="card-text">Doble tracción 4x4</p>
-              <div class="icons">
-                <i class="bi bi-lightning" title="Eléctrico"></i>
-                <i class="bi bi-people-fill" title="5 Pasajeros"></i>
-                <i class="bi bi-fuel-pump" title="Gasolina"></i>
-                <i class="bi bi-gear" title="Automático"></i>
-                <i class="bi bi-wind" title="Aire acondicionado"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Tarjeta 3 -->
-        <div class="col-12 col-sm-6 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-img-top">
-              <img src="../resources/images/Mitsubishi-Outlander.jpg" class="img-fluid" alt="Mitsubishi Outlander">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Mitsubishi 4X4 Outlander</h5>
-              <p class="card-text">Doble tracción 4x4</p>
-              <div class="icons">
-                <i class="bi bi-lightning" title="Eléctrico"></i>
-                <i class="bi bi-people-fill" title="7 Pasajeros"></i>
-                <i class="bi bi-fuel-pump" title="Gasolina"></i>
-                <i class="bi bi-gear" title="Automático"></i>
-                <i class="bi bi-wind" title="Aire acondicionado"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-    
       </div>
     </div>
-  </div>
 
-
-<div class="ventajas-container">
-  <h2 class="ventajas-title">VENTAJAS DE RESERVAR TU VEHÍCULO EN <strong>KaribeCar</strong></h2>
-  <div class="ventajas-grid">
-    <div class="ventaja">
-      <img src="../resources/images/el-precio-mas-bajo.png" alt="Descuento">
-      <h3>¿Quién dijo que alquilar coche es caro?</h3>
-      <p>Con nuestros descuentos de hasta el 30%, ahorrar es parte del viaje</p>
-    </div>
-    <div class="ventaja">
-      <img src="../resources/images/etiqueta-del-precio.png" alt="Comparar compañías">
-      <h3>Tu comparador de confianza</h3>
-      <p>Ahorra tiempo y dinero comparando en un solo paso.</p>
-    </div>
-    <div class="ventaja">
-      <img src="../resources/images/en-todo-el-mundo.png" alt="Mundo">
-      <h3>Donde vayas, ahí estamos</h3>
-      <p>Viaja sin límites con más puntos de recogida disponibles.</p>
-    </div>
-    <div class="ventaja">
-      <img src="../resources/images/comprobado.png" alt="Check">
-      <h3>Modificación de reserva sin cargos adicionales</h3>
-      <p>Realiza cambios en tu reserva de manera gratuita.</p>
-    </div>
-  </div>
-</div>
-
-
-
-<section class="container py-5">
-  <div class="row align-items-center">
-    <!-- Texto -->
-    <div class="col-lg-6 mb-4 mb-lg-0">
-      <h1 class="display-5 fw-bold">Caribe auténtico, aventura infinita </h1>
-      <p class="fs-5 text-muted mt-3">
-        Explora Limón como nunca antes: playas vírgenes, cultura vibrante y naturaleza salvaje te esperan. Alquila tu vehículo y empieza el viaje de tu vida.
-      </p>
+    <div class="ventajas-container">
+      <h2 class="ventajas-title">
+        VENTAJAS DE RESERVAR TU VEHÍCULO EN <strong>KaribeCar</strong>
+      </h2>
+      <div class="ventajas-grid">
+        <div class="ventaja">
+          <img
+            src="../resources/images/el-precio-mas-bajo.png"
+            alt="Descuento"
+          />
+          <h3>¿Quién dijo que alquilar coche es caro?</h3>
+          <p>
+            Con nuestros descuentos de hasta el 30%, ahorrar es parte del viaje
+          </p>
+        </div>
+        <div class="ventaja">
+          <img
+            src="../resources/images/etiqueta-del-precio.png"
+            alt="Comparar compañías"
+          />
+          <h3>Tu comparador de confianza</h3>
+          <p>Ahorra tiempo y dinero comparando en un solo paso.</p>
+        </div>
+        <div class="ventaja">
+          <img src="../resources/images/en-todo-el-mundo.png" alt="Mundo" />
+          <h3>Donde vayas, ahí estamos</h3>
+          <p>Viaja sin límites con más puntos de recogida disponibles.</p>
+        </div>
+        <div class="ventaja">
+          <img src="../resources/images/comprobado.png" alt="Check" />
+          <h3>Modificación de reserva sin cargos adicionales</h3>
+          <p>Realiza cambios en tu reserva de manera gratuita.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- Imagen -->
-    <div class="col-lg-6 cr-image text-center">
-      <img src="../resources/images/playa2.jpg" alt="Costa Rica Beach" class="img-fluid">
-    </div>
-  </div>
-</section>
+    <section class="container py-5">
+      <div class="row align-items-center">
+        <!-- Texto -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <h1 class="display-5 fw-bold">Caribe auténtico, aventura infinita</h1>
+          <p class="fs-5 text-muted mt-3">
+            Explora Limón como nunca antes: playas vírgenes, cultura vibrante y
+            naturaleza salvaje te esperan. Alquila tu vehículo y empieza el
+            viaje de tu vida.
+          </p>
+        </div>
+
+        <!-- Imagen -->
+        <div class="col-lg-6 cr-image text-center">
+          <img
+            src="../resources/images/playa2.jpg"
+            alt="Costa Rica Beach"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <div id="footer-include"></div>
 
     <!-- Bootstrap JS + includes -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../scripts/include.js"></script>
-
-    
-      
+    <script src="../scripts/include.js"></script>
   </body>
 </html>
