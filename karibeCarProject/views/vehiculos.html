@@ -33,7 +33,7 @@
   
           <!-- Checkboxes -->
           <div class="form-check mb-2">
-            <input class="form-check-input  border-white" type="checkbox" value="sedan" id="checkSedan" checked>
+            <input class="form-check-input  border-white" type="checkbox" value="sedan" id="checkSedan">
             <label class="form-check-label text-white" for="checkSedan">Sedán</label>
           </div>
   
@@ -43,8 +43,8 @@
           </div>
   
           <div class="form-check mb-2">
-            <input class="form-check-input border-white" type="checkbox" value="pickup" id="checkPickup">
-            <label class="form-check-label text-white" for="checkPickup">Pickup</label>
+            <input class="form-check-input border-white" type="checkbox" value="pickup" id="checkHatchback">
+            <label class="form-check-label text-white" for="checkHatchback">Hatchback</label>
           </div>
   
           <div class="form-check mb-2">
@@ -60,7 +60,7 @@
           <!-- Select de cantidad -->
           <label for="cantidadPasajeros" class="form-label text-white">Pasajeros</label>
           <select class="form-select mb-2" id="cantidadPasajeros">
-            <option selected disabled>Cantidad</option>
+            <option value="Cantidad" selected>Cantidad</option>
             <option value="2">2</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -78,7 +78,7 @@
         </p>
 
         
-          <div class="container-color">
+          <div class="container-color" style="background: white;">
             <div class="container my-5">
               <div class="row g-4" id="vehiculo-cards">
                 <!-- Aquí se insertan las tarjetas desde vehiculo.js -->
