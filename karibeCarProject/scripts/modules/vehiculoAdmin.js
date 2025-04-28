@@ -41,7 +41,7 @@ function renderizarTarjetas(vehiculos) {
     card.className = 'col-md-4 mb-4';
 
     card.innerHTML = `
-      <div class="card h-100 card-hover" style="background-color: rgb(247, 245, 245);">
+      <div class="card h-100 card-hover" style="background-color: #eef1f3;">
         <img src="${vehiculo.imagen}" class="card-img-top" alt="Imagen del ${vehiculo.modelo}">
         <div class="card-body">
           <h5 class="card-title titulo-vehiculo fw-bold">${vehiculo.marca} ${vehiculo.modelo}</h5>
