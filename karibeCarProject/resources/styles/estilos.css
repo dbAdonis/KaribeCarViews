@@ -215,7 +215,7 @@ header {
   width: 350px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
   overflow: hidden;
   position: relative;
   text-align: left;
@@ -547,4 +547,79 @@ h2 {
   .cr-image img {
     border-radius: 1rem;
   }
+}
+
+/* Contenedor de cada tarjeta */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: rgba(248,250,253,255);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Sombra ligera y elevación al pasar el ratón */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de la tarjeta: altura fija y recorte proporcional */
+.card-img-top {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  width: 80%; /* más pequeña, puedes ajustar este porcentaje */
+  display: block; /* necesario para usar margin auto */
+  margin: 0 auto; /* centra horizontalmente */
+  transition: transform 0.3s ease;
+  border-radius: 8px; /* opcional: esquinas redondeadas si quieres */
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  padding: 1rem;
+  background: #eef1f3;
+}
+
+/* Título */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+/* Texto secundario */
+.card-body p {
+  margin-bottom: 0.5rem;
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+/* Botones pequeños con mismo ancho */
+.card-body .btn-sm {
+  width: 48%;
+  font-size: 0.875rem;
+  padding: 0.35rem 0.5rem;
+}
+
+/* Ajustes de colores si quieres personalizar */
+.btn-warning {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+  color: #e2e6ea;
+}
+.btn-warning:hover {
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-danger:hover {
+  background-color: #c9302c;
+  border-color: #ac2925;
 }

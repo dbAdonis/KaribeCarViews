@@ -17,93 +17,83 @@
 
     <link href="../resources/styles/estilos.css" rel="stylesheet">
   </head>
-  <body >
+
+  <body>
+    <!-- HEADER -->
     <div id="header-include"></div>
+
     <!-- CONTENIDO PRINCIPAL -->
-
-  <!-- CONTENEDOR GENERAL -->
-<div class="container-fluid">
-    <div class="row">
+    <div class="container-fluid">
+      <div class="row">
   
-      <!-- FILTRO LATERAL -->
-      <div class="col-lg-2 col-md-3 col-sm-12 mb-4">
-        <div class="p-4 rounded shadow-sm text-white filtro-pequeno" style="background-color: #245; margin-top: 10px; margin-left: 10px;">
+        <!-- FILTRO LATERAL -->
+        <div class="col-lg-2 col-md-3 col-sm-12 mb-4">
+          <div class="p-4 rounded shadow-sm text-white filtro-pequeno" style="background-color: #245; margin-top: 10px; margin-left: 10px;">
   
-          <h6 class="fw-bold mb-3">FILTROS</h6>
+            <h6 class="fw-bold mb-3">FILTROS</h6>
   
-          <!-- Checkboxes -->
-          <div class="form-check mb-2">
-            <input class="form-check-input  border-white" type="checkbox" value="sedan" id="checkSedan" checked>
-            <label class="form-check-label text-white" for="checkSedan">Sedán</label>
+            <!-- Checkboxes -->
+            <div class="form-check mb-2">
+              <input class="form-check-input border-white" type="checkbox" value="sedan" id="checkSedan">
+              <label class="form-check-label text-white" for="checkSedan">Sedán</label>
+            </div>
+  
+            <div class="form-check mb-2">
+              <input class="form-check-input border-white" type="checkbox" value="suv" id="checkSUV">
+              <label class="form-check-label text-white" for="checkSUV">SUV</label>
+            </div>
+  
+            <div class="form-check mb-2">
+              <input class="form-check-input border-white" type="checkbox" value="pickup" id="checkHatchback">
+              <label class="form-check-label text-white" for="checkHatchback">Hatchback</label>
+            </div>
+  
+            <div class="form-check mb-2">
+              <input class="form-check-input border-white" type="checkbox" value="van" id="checkVan">
+              <label class="form-check-label text-white" for="checkVan">Van</label>
+            </div>
+  
+            <div class="form-check mb-4">
+              <input class="form-check-input border-white" type="checkbox" value="electricos" id="checkElectric">
+              <label class="form-check-label text-white" for="checkElectric">Eléctricos</label>
+            </div>
+  
+            <!-- Select de cantidad -->
+            <label for="cantidadPasajeros" class="form-label text-white">Pasajeros</label>
+            <select class="form-select mb-2" id="cantidadPasajeros">
+              <option value="Cantidad" selected>Cantidad</option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="7">7+</option>
+            </select>
           </div>
-  
-          <div class="form-check mb-2">
-            <input class="form-check-input border-white" type="checkbox" value="suv" id="checkSUV">
-            <label class="form-check-label text-white" for="checkSUV">SUV</label>
-          </div>
-  
-          <div class="form-check mb-2">
-            <input class="form-check-input border-white" type="checkbox" value="pickup" id="checkPickup">
-            <label class="form-check-label text-white" for="checkPickup">Pickup</label>
-          </div>
-  
-          <div class="form-check mb-2">
-            <input class="form-check-input border-white" type="checkbox" value="van" id="checkVan">
-            <label class="form-check-label text-white" for="checkVan">Van</label>
-          </div>
-  
-          <div class="form-check mb-4">
-            <input class="form-check-input border-white" type="checkbox" value="electricos" id="checkElectric">
-            <label class="form-check-label text-white" for="checkElectric">Eléctricos</label>
-          </div>
-  
-          <!-- Select de cantidad -->
-          <label for="cantidadPasajeros" class="form-label text-white">Pasajeros</label>
-          <select class="form-select mb-2" id="cantidadPasajeros">
-            <option selected disabled>Cantidad</option>
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="7">7+</option>
-          </select>
         </div>
-      </div>
   
-      <!-- CONTENIDO AL LADO -->
-      <div class="col-lg-9 col-md-8 col-12">
-        <!-- Aquí podés poner tus cards, resultados, etc. -->
-        <h4 style="color: #245; margin-top: 10px;">Opciones de vehículos para rentar</h4>
-        <p class="text-muted">
-          <strong>Elige el vehículo que mejor se adapte a tu viaje, con precios accesibles y atención personalizada..</strong>
-        </p>
-
-        
-          <div class="container-color">
+        <!-- CONTENIDO AL LADO -->
+        <div class="col-lg-9 col-md-8 col-12">
+          <h4 style="color: #245; margin-top: 10px;">Opciones de vehículos para rentar</h4>
+          <p class="text-muted">
+            <strong>Elige el vehículo que mejor se adapte a tu viaje, con precios accesibles y atención personalizada.</strong>
+          </p>
+  
+          <div class="container-color" style="background: white;">
             <div class="container my-5">
               <div class="row g-4" id="vehiculo-cards">
                 <!-- Aquí se insertan las tarjetas desde vehiculo.js -->
               </div>
             </div>
           </div>
-
-
-
-        
-         
-          
+        </div> <!-- Cierre de .col -->
       </div> <!-- Cierre de .row -->
-    </div>
-      
-  
+    </div> <!-- Cierre de .container-fluid -->
     
+    <!-- FOOTER -->
+    <div id="footer-include"></div>
 
-        <!-- FOOTER -->
-        <div id="footer-include"></div>
-
-        <!-- Bootstrap JS + includes -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../scripts/include.js"></script>
-        <script src="../scripts/modules/vehiculo.js"></script>
-      </body>
+    <!-- Bootstrap JS + includes -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/include.js"></script>
+    <script src="../scripts/modules/vehiculo.js"></script>
+  </body>
 </html>
-  
