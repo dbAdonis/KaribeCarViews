@@ -1,5 +1,16 @@
 const API_VEHICULOS_URL = 'http://localhost:8080/vehiculos';
 
+let vehiculos = []; // Lista completa de vehículos
+let vehiculosFiltrados = []; // Vehículos después de aplicar filtros
+
+const tipoVehiculoMap = {
+  1: 'Sedán',
+  2: 'SUV',
+  3: 'Pickup',
+  4: 'Van',
+  5: 'Eléctrico'
+};
+
 // Esperar carga completa del DOM
 document.addEventListener('DOMContentLoaded', () => {
   // Si estamos en la lista de vehículos
@@ -20,7 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function cargarVehiculos() {
   fetch(API_VEHICULOS_URL)
     .then(res => res.json())
-    .then(data => renderizarTarjetas(data))
+    .then(data => {
+      vehiculos = data; // Guardar los vehículos obtenidos
+      vehiculosFiltrados = [...vehiculos]; // Inicialmente, todos los vehículos están disponibles
+      renderizarTarjetas(vehiculosFiltrados);
+      inicializarFiltros();
+    })
     .catch(err => console.error('Error al cargar vehículos:', err));
 }
 
@@ -31,10 +47,10 @@ function cargarVehiculos() {
 function renderizarTarjetas(vehiculos) {
   const cont = document.getElementById('vehiculo-cards');
   cont.innerHTML = '';
-  const tipoMap = {1:'Sedán', 2:'SUV', 3:'Hatchback'};
+  const tipoMap = {1:'Sedán', 2:'SUV', 3:'Pickup'};
 
   vehiculos.forEach(vehiculo => {
-    const tipoNombre = tipoMap[vehiculo.idTipoVehiculo?.idTipoVehiculo] || 'Desconocido';
+    const tipoNombre = tipoVehiculoMap[vehiculo.idTipoVehiculo?.idTipoVehiculo] || 'Desconocido';
     const modalId = `modalVehiculo${vehiculo.idVehiculo}`;
 
     const card = document.createElement('div');
@@ -182,3 +198,76 @@ function abrirModalNuevoVehiculo() {
   new bootstrap.Modal(document.getElementById('modalVehiculo')).show();
 }
 
+/**
+ * Inicializa los filtros y conecta sus eventos.
+ */
+function inicializarFiltros() {
+  const filtros = document.querySelectorAll('.form-check-input, #cantidadPasajeros');
+  filtros.forEach(el => el.addEventListener('change', aplicarFiltros));
+}
+
+/**
+ * Aplica los filtros seleccionados
+ */
+function aplicarFiltros() {
+  const tipos = [];
+  if (document.getElementById('checkSedan').checked) tipos.push('sedán');
+  if (document.getElementById('checkSUV').checked) tipos.push('suv');
+  if (document.getElementById('checkPickup').checked) tipos.push('pickup');
+  if (document.getElementById('checkVan').checked) tipos.push('van');
+  if (document.getElementById('checkElectric').checked) tipos.push('eléctrico');
+
+  const pas = document.getElementById('cantidadPasajeros').value;
+
+  // Filtrar vehículos según los criterios seleccionados
+  vehiculosFiltrados = vehiculos.filter(v => {
+    const tipo = (tipoVehiculoMap[v.idTipoVehiculo?.idTipoVehiculo] || '').toLowerCase();
+    const matchTipo = tipos.length === 0 || tipos.includes(tipo);
+
+    let matchPas = false;
+    if (pas === "Cantidad" || pas === "") {
+      matchPas = true;
+    } else if (pas === "4") {
+      matchPas = v.pasajeros == 4;
+    } else if (pas === "5") {
+      matchPas = v.pasajeros == 5;
+    } else if (pas === "7") {
+      matchPas = v.pasajeros == 7;
+    } else {
+      matchPas = v.pasajeros === parseInt(pas);
+    }
+
+    return matchTipo && matchPas;
+  });
+
+  // Re-renderizar las tarjetas
+  renderizarTarjetas(vehiculosFiltrados);
+
+  mostrarMensajeNoResultados(vehiculosFiltrados.length === 0);
+}
+
+function mostrarMensajeNoResultados(mostrar) {
+  let msg = document.getElementById('mensaje-no-resultados');
+  if (!msg) {
+      msg = document.createElement('div');
+      msg.id = 'mensaje-no-resultados';
+      msg.className = 'text-center mt-4';
+      msg.innerHTML = `<div class="alert alert-warning">No hay vehículos que coincidan con los filtros.</div>`;
+      document.getElementById('vehiculo-cards').appendChild(msg);
+  }
+  msg.style.display = mostrar ? 'block' : 'none';
+}
+
+/**
+ * Conecta los eventos de filtro.
+ */
+function inicializarEventos() {
+  const filtros = document.querySelectorAll('.form-check-input, #cantidadPasajeros');
+  filtros.forEach(el => el.addEventListener('change', aplicarFiltros));
+}
+
+// Al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+  cargarVehiculos();
+  inicializarEventos();
+});

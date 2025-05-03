@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Autos</title>
-
+    
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
@@ -22,6 +22,7 @@
   </head>
   <body>
     <div id="header-include"></div>
+
     <!-- CONTENIDO PRINCIPAL -->
 
     <div class="fondo-container">
@@ -108,21 +109,22 @@
     <div class="flota-container text-center py-5">
       <h2>Viaje con libertad, elija su vehículo</h2>
       <p>Conduce hacia el paraíso, tu próxima aventura te espera.</p>
-      <div
-        class="flota-buttons d-flex justify-content-center flex-wrap gap-2 mt-3"
-      >
-        <button class="flota-btn btn text-white">Todos</button>
-        <button class="flota-btn btn text-white">Sedan</button>
-        <button class="flota-btn btn text-white">SUV</button>
-        <button
-          class="flota-btn btn btn-warning text-white"
-          style="background-color: #e67300"
-        >
-          Más rentados
-        </button>
-      </div>
+      
     </div>
     <div class="container-color">
+        <div class="container my-4">
+          <h2>Vehículos disponibles</h2>
+          <div class="position-relative">
+            <button id="btn-prev" class="btn btn-dark position-absolute top-50 start-0 translate-middle-y z-1">&lt;</button>
+            <div id="cards-container" class="d-flex overflow-auto gap-3 px-5" style="scroll-behavior: smooth;">
+              <!-- Aquí irán las cards insertadas por JS -->
+            </div>
+            <button id="btn-next" class="btn btn-dark position-absolute top-50 end-0 translate-middle-y z-1">&gt;</button>
+          </div>
+        </div>
+        
+      
+      
       <div class="container my-5">
         <div class="row g-4">
           <!-- Tarjeta 1 -->
@@ -266,5 +268,6 @@
     <!-- Bootstrap JS + includes -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/include.js"></script>
+    <script src="../scripts/modules/index.js"></script>
   </body>
 </html>
