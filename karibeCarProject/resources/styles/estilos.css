@@ -1,3 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   background-color: #245;
   border-bottom: 2px solid #c46820;
@@ -623,3 +639,34 @@ h2 {
   background-color: #c9302c;
   border-color: #ac2925;
 }
+
+#carouselExample {
+  max-width: 500px !important; /* Limita el ancho máximo del carrusel */
+  width: 100% !important;
+  margin: 20px auto !important; /* Centrado */
+  border-radius: 10px !important; /* Bordes redondeados */
+  overflow: hidden !important; /* Evita que las imágenes sobresalgan */
+}
+
+.carousel-inner {
+  height: 300px !important; /* Ajusta la altura del carrusel */
+}
+
+.carousel-item img {
+  width: 100% !important;  /* Ancho de las imágenes al 100% del contenedor */
+  height: 100% !important;  /* Altura de las imágenes al 100% del contenedor */
+  object-fit: cover !important; /* Ajusta la imagen para que cubra el área sin deformarse */
+}
+
+.carousel-inner {
+  background-color: rgba(0, 0, 0, 0.2) !important;  /* Añadir un fondo temporal para ver el tamaño */
+  height: 300px !important;
+}
+
+.img-circular {
+  width: 400px;        /* O el tamaño que necesites */
+  height: 400px;
+  object-fit: cover;   /* Recorta la imagen sin deformarla */
+  border-radius: 50%; 
+}
+

@@ -33,7 +33,7 @@ function renderizarTarjetasOficinas(oficinas) {
     const card = document.createElement('div');
     card.className = 'col-md-6 col-lg-4';
     card.innerHTML = `
-      <div class="card h-100 d-flex flex-column">
+      <div class="card h-100 d-flex flex-column" style="background: #eef1f3">
         <div class="card-body car-fondo d-flex flex-column">
           <h5 class="card-title titulo-sucursal">${oficina.provincia}</h5>
           <p class="card-text subtitulo-sucursal">${oficina.canton}</p>
@@ -82,7 +82,6 @@ function abrirModalOficina(oficina = null) {
   campos.forEach(campo => {
     document.getElementById(campo).value = oficina ? oficina[campo] : '';
   });
-
   modal.show();
 }
 

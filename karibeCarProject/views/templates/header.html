@@ -18,52 +18,32 @@
       <!-- Menú central -->
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 text-center">
         <li class="nav-item">
-          <a class="nav-link text-light" href="../views/vehiculos.html">Vehículos</a>
+          <a id="vehiculos-link" class="nav-link text-light" href="../views/vehiculos.html">Vehículos</a>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link text-light" href="../views/reservar.html">Reservas</a>
+          <a id="reservar-link" class="nav-link text-light" href="../views/reservar.html">Reservas</a>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link text-light" href="../views/oficinas.html">Oficinas</a>
+          <a id="oficinas-link" class="nav-link text-light" href="../views/oficinas.html">Oficinas</a>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link text-light" href="../views/nosotros.html">Nosotros</a>
+          <a id="nosotros-link" class="nav-link text-light" href="../views/nosotros.html">Nosotros</a>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link text-light" href="#">Otro</a>
+          <a id="otro-link" class="nav-link text-light" href="#">Otro</a>
         </li>
       </ul>
 
-      <!-- Panel derecho -->
+      <!-- Panel derecho --
       <div class=" info-panel d-flex align-items-center" >
-        <button class="btn btn-outline-light">INICIAR SESIÓN</button>
-      </div>
+        <button class="btn btn-outline-light">CERRAR SESIÓN</button>
+      </div> -->
+
+      <!-- En la parte derecha de la navbar -->
+      <div id="logout-container" class="info-panel d-flex align-items-center"></div>
+
+
     </div>
   </div>
 </nav>
-
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Obtener la ruta actual del navegador
-        const currentPath = window.location.pathname.split("/").pop(); // Solo el nombre del archivo
-    
-        // Obtener todos los enlaces de navegación
-        const navLinks = document.querySelectorAll(".nav-link");
-    
-        // Recorrer cada enlace y añadir la clase 'active' al enlace correspondiente
-        navLinks.forEach((link) => {
-          // Comparar el href con el nombre del archivo actual
-          const linkPath = link.getAttribute("href").split("/").pop();
-    
-          // Si coincide, añadir la clase 'active'
-          if (linkPath === currentPath) {
-            link.classList.add("active");
-          } else {
-            // Si no coincide, eliminar la clase 'active' en el caso que ya estuviera
-            link.classList.remove("active");
-          }
-        });
-      });
-    </script>
 

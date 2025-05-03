@@ -6,7 +6,7 @@ const API_VEHICULOS_URL = 'http://localhost:8080/vehiculos';
 const tipoVehiculoMap = {
     1: 'Sedán',
     2: 'SUV',
-    3: 'Hatchback',
+    3: 'Pickup',
     4: 'Van',
     5: 'Eléctrico'
 };
@@ -14,7 +14,7 @@ const tipoVehiculoMap = {
 let vehiculos = []; // Lista completa de vehículos
 let vehiculosFiltrados = []; // Vehículos después de aplicar filtros
 let paginaActual = 1;
-const VEHICULOS_POR_PAGINA = 6;
+const VEHICULOS_POR_PAGINA = 9;
 
 /**
  * Cargar todos los vehículos al inicio.
@@ -192,7 +192,7 @@ function aplicarFiltros() {
     const tipos = [];
     if (document.getElementById('checkSedan').checked)     tipos.push('sedán');
     if (document.getElementById('checkSUV').checked)       tipos.push('suv');
-    if (document.getElementById('checkHatchback').checked) tipos.push('hatchback');
+    if (document.getElementById('checkPickup').checked) tipos.push('pickup');
     if (document.getElementById('checkVan').checked)       tipos.push('van');
     if (document.getElementById('checkElectric').checked)  tipos.push('eléctrico');
 
@@ -207,14 +207,12 @@ function aplicarFiltros() {
         let matchPas = false;
         if (pas === "Cantidad" || pas === "") {
             matchPas = true;  // Si no se selecciona un filtro, lo dejamos pasar
-        } else if (pas === "2") {
-            matchPas = v.pasajeros == 2;
         } else if (pas === "4") {
             matchPas = v.pasajeros == 4;
         } else if (pas === "5") {
             matchPas = v.pasajeros == 5;
         } else if (pas === "7") {
-            matchPas = v.pasajeros >= 7;  // Filtro para vehículos con 7 o más pasajeros
+            matchPas = v.pasajeros == 7;  // Filtro para vehículos con 7 o más pasajeros
         } else {
             matchPas = v.pasajeros === parseInt(pas);  // Filtro exacto para la cantidad seleccionada
         }
