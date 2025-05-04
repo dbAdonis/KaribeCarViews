@@ -32,25 +32,24 @@ function renderizarCarruselVehiculos() {
 
   vehiculos.forEach(vehiculo => {
     const card = document.createElement('div');
-    card.className = 'card shadow-sm mx-2';
-    card.style.minWidth = '400px';
-    card.style.maxWidth = '400px';
+    card.className = 'card border-0 shadow-sm mx-2';
+    card.style.minWidth = '200px';
+    card.style.maxWidth = '500px';
     card.style.borderRadius = '1rem';
+    card.style.overflow = 'hidden';
 
     card.innerHTML = `
-      <div class="card h-100 shadow-sm">
-        <div class="card-img-top position-relative">
-          <img src="${vehiculo.imagen}" class="img-fluid" alt="${vehiculo.modelo}" style="height: 200px; object-fit: cover;">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">${vehiculo.marca} ${vehiculo.modelo}</h5>
-          <p class="card-text">${vehiculo.idTipoVehiculo?.nombre + ' o similar'|| 'Tipo no disponible'}</p>
-          <div class="icons mt-3">
-             <i class="bi bi-lightning me-2" title="${vehiculo.potencia} "></i>
-            <i class="bi bi-people-fill me-2" title="${vehiculo.pasajeros} pasajeros"></i>
-            <i class="bi bi-fuel-pump me-2" title="${vehiculo.combustible}"></i>
-            <i class="bi bi-gear me-2" title="${vehiculo.traccion}"></i>
-          </div>
+      <div class="card-img-top position-relative">
+        <img src="${vehiculo.imagen}" class="img-fluid" alt="${vehiculo.modelo}" style="height: 200px; object-fit: cover;">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">${vehiculo.marca} ${vehiculo.modelo}</h5>
+        <p class="card-text">${vehiculo.idTipoVehiculo?.nombre + ' o similar' || 'Tipo no disponible'}</p>
+        <div class="icons mt-3">
+          <i class="bi bi-lightning me-2" title="${vehiculo.potencia}"></i>
+          <i class="bi bi-people-fill me-2" title="${vehiculo.pasajeros} pasajeros"></i>
+          <i class="bi bi-fuel-pump me-2" title="${vehiculo.combustible}"></i>
+          <i class="bi bi-gear me-2" title="${vehiculo.traccion}"></i>
         </div>
       </div>
     `;

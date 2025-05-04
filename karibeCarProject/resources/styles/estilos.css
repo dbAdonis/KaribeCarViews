@@ -405,6 +405,18 @@ h2 {
   align-items: center;
   margin-bottom: auto;
 }
+
+.fondo-container-reservas {
+  background-image: url("../images/playa2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+
 .btn-cancelar {
   background-color: #dedede92;
   border: none;
@@ -426,6 +438,30 @@ h2 {
 
 .formulario-blanco {
   background-color: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.formulario-blanco-reservas {
+  background-color: rgba(245, 240, 240, 0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.formulario-blanco-cliente {
+  background-color: rgba(245, 240, 240, 0.26);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 15px;
@@ -626,6 +662,10 @@ h2 {
   border-color: #ac2925;
 }
 
+.container-color {
+  background-color: white;
+}
+
 
 
 .img-circular {
@@ -705,3 +745,97 @@ h2 {
 }
 
 
+
+/*modo oscuro*/
+/* === Estilos por defecto: Modo claro === */
+/* Estilos predeterminados (Modo claro) */
+body {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.navbar, .card, .footer  {
+  background-color: #f0f0f0;
+  color: rgba(0, 0, 0, 0.268);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Modo oscuro: afectará TODO cuando la clase .dark-mode esté en el body */
+body.dark-mode  {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .footer,
+body.dark-mode .flota-container,
+body.dark-mode .container-color{
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+body.dark-mode .flota-container-2{
+background-color: #121212;
+  color: white;
+
+}
+body.dark-mode .texto-vehiculo,
+body.dark-mode .text,
+body.dark-mode .text-renta-vehiculo{
+  color: white;
+}
+
+body.dark-mode .vehiculo-cards{
+  background-color: #444;
+}
+
+body.dark-mode .ventaja,
+body.dark-mode .text-ventaja,
+body.dark-mode .ventajas-title{
+  background-color: #333;
+  color: white;
+}
+
+body.dark-mode .card-ofi{
+  background-color: #000;
+}
+body.dark-mode .container-nt,
+body.dark-mode .car-fondo{
+  background-color: #34343415;
+}
+
+
+body.dark-mode .text-caribe,
+body.dark-mode .card-text,
+body.dark-mode .card-title{
+  color: white;
+}
+body.dark-mode a {
+  color: #4fc3f7; /* color azul claro para links */
+}
+
+body.dark-mode .info-panel a {
+  color: #e79b58;
+}
+
+body.dark-mode .info-panel button {
+  background-color: #e79b58;
+  color: white;
+}
+
+
+
+body.dark-mode .card-img-top img {
+  filter: brightness(0.6);
+}
+
+body.dark-mode .btn-detalle-vehiculo {
+  background-color: #ff9800;
+}
+
+body.dark-mode .btn-cancelar {
+  background-color: #444;
+  color: #fff;
+}

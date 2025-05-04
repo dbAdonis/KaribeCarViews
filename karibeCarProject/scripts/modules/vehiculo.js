@@ -58,7 +58,7 @@ function renderizarVehiculos() {
         card.style.transition = 'opacity 0.5s ease-in'; // ← Agregado desde el inicio*/
 
         card.innerHTML = `
-            <div class="card h-100 card-hover" style="background-color: #eef1f3;">
+            <div class="card h-100 card-hover">
                 <img src="${vehiculo.imagen}" class="card-img-top" alt="Imagen del ${vehiculo.modelo}">
                 <div class="card-body">
                     <h5 class="card-title titulo-vehiculo fw-bold">${vehiculo.marca} ${vehiculo.modelo}</h5>
@@ -105,7 +105,7 @@ function renderizarVehiculos() {
                             <p><i class="bi bi-card-text me-2"></i><strong>Placa:</strong> ${vehiculo.placa}</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="../views/reservar.html" class="btn btn-primary">Reservar</a>
+                            <a href="../views/reservas.html" class="btn btn-primary" onclick='guardarVehiculo(${JSON.stringify(vehiculo)})'>Reservar</a>
                         </div>
                     </div>
                 </div>
@@ -113,6 +113,11 @@ function renderizarVehiculos() {
         `;
         document.body.appendChild(modal);
     });
+}
+
+//FUNCION PARA GUARDAR EL VEHICULO SELECCIONADO
+function guardarVehiculo(vehiculo) {
+    localStorage.setItem('vehiculoSeleccionado', JSON.stringify(vehiculo));
 }
 
 /**
