@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <link href="../resources/styles/estilos.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="header-include"></div>
+
+  <div class="fondo-container-reservas">
+
+    <div class="container my-4">
+      <form class="formulario-blanco-reservas" id="form-reserva">
+        <h3 class="mb-4">ALQUILER DE AUTOS</h3>
+
+        <!-- Info del vehículo -->
+        <h5>Vehículo</h5>
+        <div id="info-vehiculo" style="display: block;"></div>
+
+        <a href="../views/vehiculos.html" class="btn btn-outline-light">Elegir vehículo</a>
+        <br><br>
+         <div class="row">
+          <div class="col-md-6 mb-3">
+            <!-- Lugar de recogida -->
+            <div class="mb-3">
+          <select class="form-control" id="lugar_recogida" name="lugar_recogida" onchange="verificarLugarRecogida()" required>
+            <option value="">Seleccione la oficina de recogida y devolución</option>
+          </select>
+        </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <!-- Lugar de devolucion -->
+        <div class="mb-3">
+          <select class="form-control" id="lugar_devolucion" name="lugar_devolucion"
+            onchange="verificarLugarDevolucion()" style="display: none;">
+            <option value="">Seleccione la oficina de devolución</option>
+          </select>
+        </div>
+          </div>
+         </div>
+
+        <!-- Switch de devolver en otra oficina -->
+        <div class="mb-3 d-flex justify-content-end">
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckDefault">Devolver en otra oficina</label>
+          </div>
+
+        </div>
+
+        <!-- Botón cancelar -->
+        <div class="mb-3 d-flex justify-content-end">
+          <button type="button" class="btn-cancelar" style="display: none;">
+            Modificar o Cancelar tu reservación
+          </button>
+        </div>
+
+        <div id="formulario_adicional">
+        <div class="row">
+          
+          <div class="col-6 col-sm-4">
+            <div class="mb-3">
+            <label for="fecha_recogida" class="form-label">Fecha y hora de recogida</label>
+            <input type="datetime-local" class="form-control" id="fecha_recogida" name="fecha_recogida" required />
+          </div>
+          </div>
+          <div class="col-6 col-sm-4">
+          <div class="mb-3">
+            <label for="fecha_devolucion" class="form-label">Fecha y hora de devolución</label>
+            <input type="datetime-local" class="form-control" id="fecha_devolucion" name="fecha_devolucion" required />
+          </div>
+          </div>
+          <div class="col-6 col-sm-4">
+                      <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edadCliente" name="edad" required min="18" max="99" />
+          </div>
+          </div>
+        </div>
+        </div>
+      
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary" id="bnt-verificar">
+              Verificar disponibilidad
+            </button>
+          </div>
+        
+      </form>
+  
+      <!-- DATOS DEL CLIENTE -->
+      <form class="formulario-blanco-cliente" id="form-cliente" style="display: none;">
+        <i class="bi bi-person fs-1"></i> <label for="datos_cliente" class="form-label fs-2">Datos del cliente</label>
+        <div class="row">
+          
+          <div class="col-6 col-sm-4">
+            <div class="mb-3">
+            <label for="fecha_recogida" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombreCliente" required>
+          </div>
+          </div>
+          <div class="col-6 col-sm-4">
+          <div class="mb-3">
+            <label for="fecha_devolucion" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidoCliente" required>
+          </div>
+          </div>
+          <div class="col-6 col-sm-4">
+                      <div class="mb-3">
+            <label for="edad" class="form-label">Celular</label>
+            <input type="text" id="celular" class="form-control" placeholder="0000-0000" required/>
+          </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-sm-4">
+            <div class="mb-3">
+              <label for="edad" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="correoElectronico">
+            </div>
+          </div>
+
+          <div class="col-md-8 col-mb-3">
+            <div class="mb-3">
+              <label for="edad" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="direccion">
+            </div>
+          </div>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary">
+            Enviar
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+  <div id="footer-include"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../scripts/include.js"></script>
+  <script src="../scripts/modules/vehiculo.js"></script>
+  <script src="../scripts/modules/reservas.js"></script>
+</body>
+
+</html>

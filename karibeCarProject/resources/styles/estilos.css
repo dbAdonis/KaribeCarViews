@@ -419,6 +419,18 @@ h2 {
   align-items: center;
   margin-bottom: auto;
 }
+
+.fondo-container-reservas {
+  background-image: url("../images/playa2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+
 .btn-cancelar {
   background-color: #dedede92;
   border: none;
@@ -440,6 +452,30 @@ h2 {
 
 .formulario-blanco {
   background-color: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.formulario-blanco-reservas {
+  background-color: rgba(245, 240, 240, 0.26);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.formulario-blanco-cliente {
+  background-color: rgba(245, 240, 240, 0.26);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 15px;
