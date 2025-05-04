@@ -188,9 +188,7 @@ header {
 .subtitulo-vehiculo {
   font-size: 18px;
 }
-.card-body {
-  margin-left: 12px;
-}
+
 .btn-detalle-vehiculo {
   background-color: #e67300;
   color: white;
@@ -229,57 +227,45 @@ header {
 /* Estilo base para las tarjetas */
 .card {
   width: 350px;
-  background: white;
-  border-radius: 10px;
-  /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+  background: rgb(180, 10, 10);
+  /*border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
-  text-align: left;
+  /*text-align: left;
   padding-bottom: 20px;
   margin-left: 50px;
-  transition: box-shadow 0.3s ease, border 0.3s ease;
-}
-
-/* Estilo para la etiqueta "Destacado" */
-.destacado {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  background: green;
-  color: white;
-  padding: 5px 15px;
-  font-weight: bold;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  /*transition: box-shadow 0.3s ease, border 0.3s ease;*/
 }
 
 /* Estilo para la contenedor de las tarjetas */
 .car-container {
-  display: flex;
+  /*display: flex;
   gap: 25px;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 
 /* Estilo para las imágenes dentro de las tarjetas */
 .card .card-img-top img {
-  width: 100%;
-  transition: transform 0.3s ease;
+  /*width: 100%;
+  transition: transform 0.3s ease;*/
 }
 
 /* Estilo al pasar el mouse sobre la tarjeta */
 .card {
-  border: none;
+  /*border: none;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;*/
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(203, 201, 201, 0.2);
+  /*box-shadow: 0 4px 12px rgba(203, 201, 201, 0.2);*/
 }
 /* Efecto al pasar el mouse sobre la imagen */
 .card:hover .card-img-top img {
-  transform: scale(1.05);
+  /*transform: scale(1.05);*/
 }
 
 /* Estilos responsivos para pantallas pequeñas */
@@ -605,8 +591,8 @@ h2 {
 .card {
   border: none;
   border-radius: 0.75rem;
-  overflow: hidden;
-  background: rgba(248,250,253,255);
+  /*overflow: hidden;*/
+  background: #eef1f3;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -621,7 +607,7 @@ h2 {
   width: 100%;
   height: 190px;
   object-fit: cover;
-  width: 80%; /* más pequeña, puedes ajustar este porcentaje */
+  width: 90%; /* más pequeña, puedes ajustar este porcentaje */
   display: block; /* necesario para usar margin auto */
   margin: 0 auto; /* centra horizontalmente */
   transition: transform 0.3s ease;
@@ -676,35 +662,88 @@ h2 {
   border-color: #ac2925;
 }
 
-#carouselExample {
-  max-width: 500px !important; /* Limita el ancho máximo del carrusel */
-  width: 100% !important;
-  margin: 20px auto !important; /* Centrado */
-  border-radius: 10px !important; /* Bordes redondeados */
-  overflow: hidden !important; /* Evita que las imágenes sobresalgan */
+.container-color {
+  background-color: white;
 }
 
-.carousel-inner {
-  height: 300px !important; /* Ajusta la altura del carrusel */
-}
 
-.carousel-item img {
-  width: 100% !important;  /* Ancho de las imágenes al 100% del contenedor */
-  height: 100% !important;  /* Altura de las imágenes al 100% del contenedor */
-  object-fit: cover !important; /* Ajusta la imagen para que cubra el área sin deformarse */
-}
-
-.carousel-inner {
-  background-color: rgba(0, 0, 0, 0.2) !important;  /* Añadir un fondo temporal para ver el tamaño */
-  height: 300px !important;
-}
 
 .img-circular {
-  width: 400px;        /* O el tamaño que necesites */
+  width: 400px;
   height: 400px;
-  object-fit: cover;   /* Recorta la imagen sin deformarla */
-  border-radius: 50%; 
+  object-fit: cover;
+  border-radius: 50%;
 }
+
+/* Contenedor general del carrusel */
+#cards-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Cada tarjeta individual */
+#cards-container .card {
+  flex: 0 0 auto;
+  width: 400px;
+  border-radius: 1rem;
+  scroll-snap-align: start;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #eef1f3;
+}
+
+#cards-container .card:hover {
+  /*transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);*/
+}
+
+/* Imagen del vehículo */
+#cards-container .card-img-top {
+  height:200px;
+  object-fit: contain;
+  background-color: #eef1f3;
+  /*border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;*/
+}
+
+/* Cuerpo de la tarjeta */
+#cards-container .card-body {
+  /*padding: 1rem;*/
+  background-color: #eef1f3;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* Título del vehículo */
+#cards-container .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Texto descriptivo */
+#cards-container .card-text {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+/* Botones de características */
+#cards-container .btn {
+  /*border-radius: 0.5rem;
+  font-size: 1.1rem;
+  background-color: #0d3b66;
+  color: #fff;
+  padding: 0.3rem 0.6rem;*/
+}
+
+#cards-container .btn:hover {
+  background-color: #08509e;
+}
+
 
 
 /*modo oscuro*/
