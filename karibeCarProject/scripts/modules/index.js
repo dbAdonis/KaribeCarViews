@@ -37,12 +37,12 @@ function renderizarCarruselVehiculos() {
     card.style.maxWidth = '500px';
     card.style.borderRadius = '1rem';
     card.style.overflow = 'hidden';
-
+  
     card.innerHTML = `
-      <div class="card-img-top position-relative">
-        <img src="${vehiculo.imagen}" class="img-fluid" alt="${vehiculo.modelo}" style="height: 200px; object-fit: cover;">
-      </div>
-      <div class="card-body">
+      <img src="${vehiculo.imagen}" alt="${vehiculo.modelo}" 
+           style="height: 200px; object-fit: cover; width: 100%; display: block;">
+  
+      <div class="p-3">
         <h5 class="card-title">${vehiculo.marca} ${vehiculo.modelo}</h5>
         <p class="card-text">${vehiculo.idTipoVehiculo?.nombre + ' o similar' || 'Tipo no disponible'}</p>
         <div class="icons mt-3">
