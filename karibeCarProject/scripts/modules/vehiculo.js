@@ -58,7 +58,7 @@ function renderizarVehiculos() {
         card.style.transition = 'opacity 0.5s ease-in'; // ← Agregado desde el inicio*/
 
         card.innerHTML = `
-            <div class="card h-100 card-hover" style="background-color: #eef1f3;">
+            <div class="card h-100 card-hover">
                 <img src="${vehiculo.imagen}" class="card-img-top" alt="Imagen del ${vehiculo.modelo}">
                 <div class="card-body">
                     <h5 class="card-title titulo-vehiculo fw-bold">${vehiculo.marca} ${vehiculo.modelo}</h5>

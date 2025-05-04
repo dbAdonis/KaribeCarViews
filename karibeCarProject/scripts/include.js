@@ -54,3 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("footer-include").innerHTML = data;
     });
 });
+
+
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
