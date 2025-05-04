@@ -240,24 +240,6 @@ window.addEventListener("beforeunload", () => {
   localStorage.removeItem("vehiculoSeleccionado");
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const formReserva = document.getElementById("form-reserva");
-  const formCliente = document.getElementById("form-cliente");
-
-  formReserva.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita envío automático
-
-    // Verifica que todos los campos requeridos estén llenos y válidos
-    if (formReserva.checkValidity()) {
-      // ✅ Todo correcto → mostrar formulario del cliente
-      formCliente.style.display = "block";
-    } else {
-      // ❌ Hay campos vacíos o inválidos
-      formReserva.reportValidity(); // Muestra los mensajes de error del navegador
-    }
-  });
-});
-
 document.getElementById("celular").addEventListener("input", function (e) {
   let value = e.target.value.replace(/\D/g, "").substring(0, 8); // solo números, máximo 8
   if (value.length > 4) {
@@ -286,4 +268,61 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('form-cliente').addEventListener('submit', async function(event) {
   event.preventDefault();  // Evita que recargue la página
   await setReserva();  // Espera a que setReserva termine antes de continuar
+});
+
+async function verificarDisponibilidad() {
+  const vehiculo = JSON.parse(localStorage.getItem("vehiculoSeleccionado"));
+
+  const carId = vehiculo.idVehiculo;
+  const startDate = document.getElementById('fecha_recogida').value;
+  const endDate = document.getElementById('fecha_devolucion').value;
+
+  try {
+    const response = await fetch('http://localhost:8080/reservas/verificar-disponibilidad', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        carId: carId,
+        startDate: startDate,
+        endDate: endDate
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en el servidor');
+    }
+
+    const data = await response.json();
+    return data.available;  // Retorna true o false directamente
+  } catch (error) {
+    console.error('Error:', error);
+    return false;  // Retorna false en caso de error
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const formReserva = document.getElementById("form-reserva");
+  const formCliente = document.getElementById("form-cliente");
+
+  formReserva.addEventListener("submit", async function (event) {
+    event.preventDefault(); // Evita el envío automático
+
+    // Verifica que todos los campos requeridos estén llenos y válidos
+    if (formReserva.checkValidity()) {
+      // Verifica la disponibilidad del vehículo en ese momento (cuando se envíe el formulario)
+      const vehiculoDisponible = await verificarDisponibilidad();  // Verifica disponibilidad en cada envío
+
+      if (vehiculoDisponible) {
+        alert('✅ El carro está disponible en ese rango de fechas.');
+        formCliente.style.display = "block";  // Muestra el formulario del cliente
+      } else {
+        alert('❌ Lo sentimos, el carro NO está disponible en esas fechas, ajuste las fechas o seleccione otro vehículo.');
+      }
+    } else {
+      // ❌ Hay campos vacíos o inválidos
+      formReserva.reportValidity(); // Muestra los mensajes de error del navegador
+    }
+  });
 });
