@@ -15,10 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (token) {
           // Cambiar los enlaces de Vehículos y Oficinas si el usuario es admin
           const vehiculoLink = document.getElementById("vehiculos-link");
+          const reservaLink = document.getElementById("reservas-link");
           const oficinaLink = document.getElementById("oficinas-link");
 
           if (vehiculoLink) {
             vehiculoLink.setAttribute("href", "../views/vehiculoAdmin.html");
+          }
+          if (reservaLink) {
+            reservaLink.setAttribute("href", "../views/reservasAdmin.html");
           }
           if (oficinaLink) {
             oficinaLink.setAttribute("href", "../views/oficinaAdmin.html");
