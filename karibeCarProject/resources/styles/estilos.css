@@ -158,7 +158,7 @@ header {
 }
 .texto-alerta {
   background-color: #245;
-  color: white;
+  color: rgb(7, 7, 7);
   font-size: 18px;
 }
 .texto-oficina {
@@ -783,11 +783,14 @@ background-color: #121212;
 }
 body.dark-mode .texto-vehiculo,
 body.dark-mode .text,
-body.dark-mode .text-renta-vehiculo{
+body.dark-mode .text-renta-vehiculo,
+body.dark-mode .text-disponible{
   color: white;
 }
 
-body.dark-mode .vehiculo-cards{
+body.dark-mode .vehiculo-cards
+/*body.dark-mode .card-img-top*/{
+
   background-color: #444;
 }
 
@@ -807,9 +810,7 @@ body.dark-mode .car-fondo{
 }
 
 
-body.dark-mode .text-caribe,
-body.dark-mode .card-text,
-body.dark-mode .card-title{
+body.dark-mode .text-caribe{
   color: white;
 }
 body.dark-mode a {
@@ -835,7 +836,16 @@ body.dark-mode .btn-detalle-vehiculo {
   background-color: #ff9800;
 }
 
-body.dark-mode .btn-cancelar {
+body.dark-mode .btn-cancelar,
+body.dark-mode .form-control{
   background-color: #444;
   color: #fff;
+}
+body.dark-mode .card-title.titulo-sucursal,
+body.dark-mode .card-text.subtitulo-sucursal,
+body.dark-mode .card-text{
+  color: rgb(0, 0, 0);
+}
+body.dark-mode .text-alquiler{
+  color: #245;
 }
