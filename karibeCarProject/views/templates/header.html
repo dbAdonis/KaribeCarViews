@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <!-- Logo -->
     <a class="navbar-brand text-light" href="../views/index.html">
-      <img src="../resources/images/ImgNosotros.jpg" alt="Logo" style="height: 90px;">
+      <img src="../resources/images/ImgNosotros.jpg" alt="Logo" style="height: 90px; width: 90px; border-radius: 50%;">
     </a>
 
     <!-- Botón hamburguesa -->
@@ -14,7 +14,7 @@
     </button>
 
     <!-- Contenido colapsable -->
-    <button onclick="toggleDarkMode()">🌙 Modo Oscuro</button>
+    
     <div class="collapse navbar-collapse justify-content-between" id="mainNavbar">
       <!-- Menú central -->
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 text-center">
@@ -22,7 +22,7 @@
           <a id="vehiculos-link" class="nav-link text-light" href="../views/vehiculos.html">Vehículos</a>
         </li>
         <li class="nav-item mx-4">
-          <a id="reservar-link" class="nav-link text-light" href="../views/reservas.html">Reservas</a>
+          <a id="reservas-link" class="nav-link text-light" href="../views/reservas.html">Reservas</a>
         </li>
         <li class="nav-item mx-4">
           <a id="oficinas-link" class="nav-link text-light" href="../views/oficinas.html">Oficinas</a>
@@ -30,10 +30,11 @@
         <li class="nav-item mx-4">
           <a id="nosotros-link" class="nav-link text-light" href="../views/nosotros.html">Nosotros</a>
         </li>
-        <li class="nav-item mx-4">
-          <a id="otro-link" class="nav-link text-light" href="#">Otro</a>
-        </li>
+        
       </ul>
+      <button onclick="toggleDarkMode()" style="border-radius: 50%; width: 40px; height: 40px; font-size: 18px;">🌙</button>
+
+
 
       <!-- Panel derecho --
       <div class=" info-panel d-flex align-items-center" >
