@@ -198,9 +198,8 @@ async function setReserva() {
     const result = await response.json();
 
     console.log('Reserva guardada exitosamente:', result);
-    alert('¡Reserva registrada con éxito!');
-    document.getElementById("form-cliente").reset();
-    document.getElementById("form-reserva").reset();
+    //document.getElementById("form-cliente").reset();
+    //document.getElementById("form-reserva").reset();
 
 
     Swal.fire({
@@ -223,7 +222,6 @@ async function setReserva() {
       timer: 8000,
       timerProgressBar: true
   });
-    alert('Hubo un error al registrar la reserva. Intenta nuevamente.');
   }
 
 }
