@@ -55,7 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+ // Al cargar la página, aplica el modo oscuro si está activado
+ if (localStorage.getItem('modoOscuro') === 'activado') {
+  document.body.classList.add('dark-mode');
+}
 
+// Función para cambiar el modo
 function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('modoOscuro', isDark ? 'activado' : 'desactivado');
 }

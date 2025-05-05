@@ -14,7 +14,7 @@ function cargarOficinas() {
         card.className = 'col-md-6 col-lg-4';
 
         card.innerHTML = `
-  <div class="card h-100 d-flex flex-column p-3">
+  <div class="card h-100 d-flex flex-column p-3" style="background:rgb(204, 204, 204)">
     <h5 class="card-title titulo-sucursal">${oficina.provincia}</h5>
     <p class="card-text subtitulo-sucursal">${oficina.canton}</p>
 
