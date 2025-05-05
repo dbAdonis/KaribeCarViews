@@ -2,6 +2,7 @@ const API_RESERVAS_URL = 'http://localhost:8080/reservas';
 const API_OFICINAS_URL = 'http://localhost:8080/oficinas';
 const API_TARIFAS_URL = 'http://localhost:8080/tarifas';
 const API_TIPO_VEHICULOS_URL = 'http://localhost:8080/tiposVehiculo';
+const API_FACTURAS_URL = 'http://localhost:8080/facturas';
 
 // FUNCION PARA CARGAR LOS SELECT
 function selectOptions() {
@@ -179,6 +180,8 @@ async function setReserva() {
     "fecha": fechaHora
   }
 
+  
+
   try {
     const response = await fetch(API_RESERVAS_URL, {  // cambia la URL por la tuya real
       method: 'POST',
@@ -193,10 +196,26 @@ async function setReserva() {
     }
 
     const result = await response.json();
-    console.log('Reserva guardada exitosamente:', result);
-    alert('¡Reserva registrada con éxito!');
+
+    Swal.fire({
+      icon: 'success',
+      title: '¡Reserva registrada con éxito!',
+      showConfirmButton: false,
+      timer: 2000
+    }).then(() => {
+      location.reload();
+    });
   } catch (error) {
     console.error('Error al enviar la reserva:', error);
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'error',
+      title: 'Hubo un error al registrar la reserva. Intenta nuevamente.',
+      showConfirmButton: false,
+      timer: 8000,
+      timerProgressBar: true
+  });
     alert('Hubo un error al registrar la reserva. Intenta nuevamente.');
   }
 
@@ -315,10 +334,26 @@ document.addEventListener("DOMContentLoaded", function () {
       const vehiculoDisponible = await verificarDisponibilidad();  // Verifica disponibilidad en cada envío
 
       if (vehiculoDisponible) {
-        alert('✅ El carro está disponible en ese rango de fechas.');
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'success',
+          title: 'El carro está disponible en ese rango de fechas.',
+          showConfirmButton: false,
+          timer: 8000,
+          timerProgressBar: true
+      });
         formCliente.style.display = "block";  // Muestra el formulario del cliente
       } else {
-        alert('❌ Lo sentimos, el carro NO está disponible en esas fechas, ajuste las fechas o seleccione otro vehículo.');
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'error',
+          title: 'El carro NO está disponible en esas fechas, ajuste las fechas o seleccione otro vehículo.',
+          showConfirmButton: false,
+          timer: 8000,
+          timerProgressBar: true
+      });
       }
     } else {
       // ❌ Hay campos vacíos o inválidos
