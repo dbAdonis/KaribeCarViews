@@ -195,6 +195,8 @@ async function setReserva() {
     const result = await response.json();
     console.log('Reserva guardada exitosamente:', result);
     alert('¡Reserva registrada con éxito!');
+    document.getElementById("form-cliente").reset();
+    document.getElementById("form-reserva").reset();
   } catch (error) {
     console.error('Error al enviar la reserva:', error);
     alert('Hubo un error al registrar la reserva. Intenta nuevamente.');
